@@ -5,7 +5,7 @@ export function Home() { //TODOlist Function
 	const [userInput, setUserInput] = useState([""]); // First empty userInput
 
 	useEffect(() => {
-		fetch("https://assets.breatheco.de/apis/fake/todos/user/testapi")
+		fetch("https://assets.breatheco.de/apis/fake/todos/user/jlhh00")
 			.then(function(response) {
 				if (!response.ok) {
 					throw Error(response.statusText);
@@ -25,7 +25,7 @@ export function Home() { //TODOlist Function
 		if (event.keyCode == 13 && userInput != "") {
 			setList(theList.concat({ label: userInput, done: false }));
 
-			fetch("https://assets.breatheco.de/apis/fake/todos/user/testapi", {
+			fetch("https://assets.breatheco.de/apis/fake/todos/user/jlhh00", {
 				method: "PUT",
 				body: JSON.stringify(
 					theList.concat({ label: userInput, done: false })
@@ -43,7 +43,7 @@ export function Home() { //TODOlist Function
 				.then(response => {
 					console.log("Success:", response);
 					fetch(
-						"https://assets.breatheco.de/apis/fake/todos/user/testapi"
+						"https://assets.breatheco.de/apis/fake/todos/user/jlhh00"
 					);
 				})
 				.catch(error => console.error("Error:", error));
@@ -61,7 +61,7 @@ export function Home() { //TODOlist Function
 		);
 		setList(updatedList);
 
-		fetch("https://assets.breatheco.de/apis/fake/todos/user/testapi", {
+		fetch("https://assets.breatheco.de/apis/fake/todos/user/jlhh00", {
 			method: "PUT",
 			body: JSON.stringify(updatedList),
 			headers: {
@@ -77,7 +77,7 @@ export function Home() { //TODOlist Function
 			.then(response => {
 				console.log("Success:", response);
 				fetch(
-					"https://assets.breatheco.de/apis/fake/todos/user/testapi"
+					"https://assets.breatheco.de/apis/fake/todos/user/jlhh00"
 				);
 			})
 			.catch(error => console.error("Error:", error));
@@ -86,7 +86,7 @@ export function Home() { //TODOlist Function
 
 	return (
 		<div className="container form text-center mt-5">
-			<h1>To-Do List</h1>
+			<h1>To-Do List API</h1>
 			<br />
 
 			<div className="container form-group todoList">
