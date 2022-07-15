@@ -137,3 +137,11 @@ input:focus {
     font-size: 14px;
     font-family: 'Ubuntu', sans-serif;
 }
+
+.trashCan {
+    fill:#090979;
+    width: 16px;
+    height: 20px;
+    
+
+}
