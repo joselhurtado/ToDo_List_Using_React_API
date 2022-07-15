@@ -133,9 +133,11 @@ input:focus {
 
 .ListResults {
     margin: 10px;
-    color: rgb(168, 168, 168);
-    font-size: 14px;
+    color: rgb(139, 139, 139);
+    font-size: 16px;
     font-family: 'Ubuntu', sans-serif;
+    text-align: right;
+    padding-right: 55px;
 }
 
 .trashCan {

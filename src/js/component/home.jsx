@@ -23,6 +23,7 @@ export function Home() {
 	}, []); //React Hook for Fetch API
 
 	const handleKeyUp = event => {
+
 		if (event.keyCode == 13 && userInput != "") {
 			setList(theList.concat({ label: userInput, done: false }));
 
@@ -52,6 +53,7 @@ export function Home() {
 			setUserInput("");
 		}
 	};
+	
 	// handleKeyUp from onKeyUp on input text with event passed as default
 	// check if event keycode is 13 (enter) and input is not blank to continue
 	// use state setList to add concat version of userInput into theList
@@ -86,7 +88,6 @@ export function Home() {
 	// create new variable with updated list > filter to check if index matches original index from list. then use setList to update to new list.
 
 const taskLeft = theList.filter((li, index) => {return li.done === false})
-// const Close = "X";
 
 return (
 <div className="container-fluid card">
@@ -127,7 +128,7 @@ return (
 				</div>
 			</div>
 			<div className="container float-lg-right ListResults">
-			<p className="list-left">Tasks left {taskLeft.length}</p>
+			<p className="list-left">Tasks left <strong>{taskLeft.length}</strong></p>
 			</div>
 				<div className="footer">
 					Made with ❤️ by <a href="https://www.hurtadojose.com">Jose Hurtado</a>
