@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
+import Logo from "/src/img/todo-image.png";
 
-export function Home() { //TODOlist Function
+export function Home() {
 	const [theList, setList] = useState([]);
 	const [userInput, setUserInput] = useState([""]); // First empty userInput
 
@@ -12,8 +13,7 @@ export function Home() { //TODOlist Function
 				}
 				return response.json(); // Read the response as json.
 			})
-			.then(function(responseAsJson) {
-				// Do stuff with the JSON
+			.then(function(responseAsJson) {  // Do stuff with the JSON
 				setList(responseAsJson);
 			})
 			.catch(function(error) {
@@ -57,7 +57,7 @@ export function Home() { //TODOlist Function
 
 	const itemDelete = index => {
 		var updatedList = theList.filter(
-			(task, taskIndex) => index != taskIndex
+			(close, taskIndex) => index != taskIndex
 		);
 		setList(updatedList);
 
@@ -84,12 +84,20 @@ export function Home() { //TODOlist Function
 	};
 	// create new variable with updated list > filter to check if index matches original index from list. then use setList to update to new list.
 
-	return (
-		<div className="container form text-center mt-5">
-			<h1>To-Do List API</h1>
-			<br />
+const Close = "X";
+const taskLeft = theList.filter((li, index) => {return li.done === false})
 
-			<div className="container form-group todoList">
+return (
+<div className="container-fluid card">
+			<div className="containerLogo">
+				<div className="d-flex justify-content-center align-items-center">
+						<div className="d-flex logo align-items-center">
+							<img src={Logo} />
+							<h1 className="d-flex">ToDo List Using API</h1>
+						</div>
+				</div>
+			</div>
+			<div className="container-fluid">
 				<input
 					className="taskInput"
 					onChange={event => setUserInput(event.target.value)}
@@ -97,11 +105,10 @@ export function Home() { //TODOlist Function
 					onKeyUp={handleKeyUp}
 					placeholder="Add a new task"
 					aria-label="Task on the list"
-					aria-describedby="basic-addon2"
 				/>
-				<br />
-				<div className="mt-3">
-					<ul className="taskGroup container-fluid">
+
+				<div className="d-flex">
+					<ul className="taskGroup container">
 						{theList.map((value, index) => {
 							return (
 								<li className="list-group-item" key={index}>
@@ -110,7 +117,7 @@ export function Home() { //TODOlist Function
 										type="button"
 										onClick={() => itemDelete(index)}
 										className="close">
-										X
+										{Close}
 									</button>
 								</li>
 							);
@@ -118,6 +125,12 @@ export function Home() { //TODOlist Function
 					</ul>
 				</div>
 			</div>
+			<div className="container float-lg-right ListResults">
+			<p className="list-left">Tasks left {taskLeft.length}</p>
+			</div>
+				<div className="footer">
+					Made with ❤️ by <a href="https://www.hurtadojose.com">Jose Hurtado</a>
+				</div>
 		</div>
 	);
 }

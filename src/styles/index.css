@@ -1,12 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;700&display=swap');
 
-/* 
 
-    You can write your own styles here...
-    
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
+@media only screen and (max-width: 510px) {
+  [class*="col-"] {
+    width: 100% !important;
+  }
+  [class*="h1"] {
+    font-size: 24px !important;
+  }
+}
 
-*/
+html, body {
+    margin: 0px;
+    padding: 0px;
+    min-height: 100%;
+    height: 100%;
+    background-image: linear-gradient(191deg, #00d4ff , 35%, #090979);
+    background: linear-gradient(90deg, #00d4ff , 35%, #090979);
+}
+
+.container {
+    border-radius: 10px;
+    width: 100%;
+}
+
+h1 {
+    font-size: 42px;
+    font-weight: bold;
+    font-family: 'Ubuntu', sans-serif;
+    text-align: left;
+    color: rgb(0, 0, 0);
+    margin-top: 10px;
+}
+
+.card {
+    margin-top: 70px;
+    background-color: #fff;
+    max-width: 720px;
+    min-height: 520px;
+    box-shadow: 5px 10px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+}
+
+.taskInput {
+    width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #090979;
+    font-family: 'Ubuntu', sans-serif;
+    color: #090979;
+}
+
+.taskGroup {
+    margin-top: 20px;
+    width: 100% !important;
+}
+
+.taskItem {
+    width: 100%;
+}
+
+.list-group-item {
+    width: auto;
+    background-color: #090979;
+    color: #fff;
+    border-radius: 10px;
+    font-family: 'Ubuntu', sans-serif;
+    margin: 10px 10px;
+    text-align: left;
+    padding: 10px 10px 14px 20px;
+    vertical-align: middle
+}
+
+.close {
+    padding: 2px 8px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #090979;
+    background-color: #fff;
+    border-radius: 10px;
+    border: 2px solid #fff;
+    font-family: 'Ubuntu', sans-serif;
+    float: right;
+    vertical-align: middle
+}
+
+.close:hover {
+    padding: 2px 8PX;
+    font-size: 18px;
+    font-weight: 700;
+    color: #090979;
+    background-color: #00d4ff;
+    border-radius: 10px;
+    border: 2px solid #fff;
+    font-family: 'Ubuntu', sans-serif;
+    vertical-align: middle
+
+}
+
+a {
+    color: #090979;
+}
+
+a:hover {
+    color:#090979;
+}
+
+.footer {
+    margin-bottom: 20px;
+    width: 100%;
+    margin-top: 50px;
+    text-align: center;
+    left: 0;
+}
+
+.containerLogo {
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+
+img {
+    width: 65px;
+    height: 65px;
+    vertical-align: middle;
+}
+
+input:focus {
+    background-color: #acf0ff;
+    color: #090979;
+    outline: 4px solid #090979;
+}
+
+.ListResults {
+    margin: 10px;
+    color: rgb(168, 168, 168);
+    font-size: 14px;
+    font-family: 'Ubuntu', sans-serif;
+}
