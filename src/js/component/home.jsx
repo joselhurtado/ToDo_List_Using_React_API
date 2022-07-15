@@ -84,7 +84,6 @@ export function Home() {
 	};
 	// create new variable with updated list > filter to check if index matches original index from list. then use setList to update to new list.
 
-const Close = "X";
 const taskLeft = theList.filter((li, index) => {return li.done === false})
 
 return (
@@ -116,8 +115,7 @@ return (
 									<button
 										type="button"
 										onClick={() => itemDelete(index)}
-										className="close">
-										{Close}
+										className="close fa-solid fa-user">
 									</button>
 								</li>
 							);
